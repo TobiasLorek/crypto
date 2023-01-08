@@ -7,7 +7,8 @@ using namespace std;
 class BigInt {
 public:
   BigInt() : len(1), bits(new bool[1]{0}){};
-  BigInt(string input) { parse_string(input); };
+  BigInt(string input);
+  ~BigInt() { delete[] bits; }
   string to_string();
   int len;
 
